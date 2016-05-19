@@ -47,7 +47,7 @@ class Origin_file:
 						newline += word + self.delim
 				self.replaced_lines.append(newline[:-1])
 			else:
-				self.replaced_lines.append(line)
+				self.replaced_lines.append(line.strip('\n'))
 
 			#progress output
 			sys.stdout.write('\r')

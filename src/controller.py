@@ -32,13 +32,7 @@ class Controller:
 
         # Write output file
         fo = open(out_dir + '/output.txt', 'w')
-        for i, line in enumerate(self.origin_mnger.replaced_lines):
-            fo.write(line)
-
-            #progress output
-	    sys.stdout.write('\r')
-	    sys.stdout.write("[writing " + fo.name + ": " + str(((i+1)*100/len(self.origin_mnger.replaced_lines))) + "%]")
-	    sys.stdout.flush()
+        
+        fo.write('\n'.join(self.origin_mnger.replaced_lines))
 
         fo.close()
-        sys.stdout.write('\n')
