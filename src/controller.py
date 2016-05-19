@@ -37,7 +37,8 @@ class Controller:
 
             #progress output
 	    sys.stdout.write('\r')
-	    sys.stdout.write("[writing " + fo.name + ": " + str(((i+1)*100/len(allLines))) + "%]")
+	    sys.stdout.write("[writing " + fo.name + ": " + str(((i+1)*100/len(self.origin_mnger.replaced_lines))) + "%]")
 	    sys.stdout.flush()
 
         fo.close()
+        sys.stdout.write('\n')
