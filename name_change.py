@@ -9,11 +9,13 @@ def main():
     parser = argparse.ArgumentParser(
     epilog="""
     Name changing tool for replacing scaffold names.
+    Latest version At:
+    https://github.com/genomeannotation/name_change
     """,
     formatter_class=argparse.RawDescriptionHelpFormatter
     )
-    parser.add_argument('-d', '--dictionary', required=True, help='path to two column file with [old names] \\t [new names]')
-    parser.add_argument('-f', '--file', required=True, help='path to file with names to be changed')
+    parser.add_argument('-d', '--dictionary', required=True, help='two column file with [new names]\\t[old names]')
+    parser.add_argument('-f', '--file', required=True, help='file with names to be changed')
     parser.add_argument('-o', '--out', help='output folder name')
     args = parser.parse_args()
     controller = Controller()

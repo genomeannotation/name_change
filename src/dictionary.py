@@ -6,7 +6,8 @@ import sys
 class Dictionary:
 
 	def __init__(self):
-		self.dict_list = []
+		self.dict_list_new = []
+		self.dict_list_old = []
 
 	#read dictionary file 
 	def read_dict(self, dictionary_filename):
@@ -23,8 +24,9 @@ class Dictionary:
 		for i, line in enumerate(allLines):
 			words = line.strip('\n')
 			splits = words.split("\t")
-			self.dict_list.append(splits[0])
-			self.dict_list.append(splits[1])
+			self.dict_list_new.append(splits[0])
+			self.dict_list_old.append(splits[1])
+
 			#progress output
 			sys.stdout.write('\r')
 			sys.stdout.write("[reading " + dictionary_filename + ": " + str(((i+1)*100/len(allLines))) + "%]")

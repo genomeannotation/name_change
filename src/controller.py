@@ -34,6 +34,6 @@ class Controller:
         fo = open(out_dir + '/output.txt', 'w')
         
         sys.stderr.write("Writing Output...\n")
-        fo.write('\n'.join(self.origin_mnger.replaced_lines))
+        fo.write(self.origin_mnger.replaced_lines)
 
         fo.close()
